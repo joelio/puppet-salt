@@ -16,7 +16,7 @@
 #
 class salt::repo (
     $manage_repo = $salt::params::manage_repo,
-) {
+) inherits salt::params {
     if ($manage_repo) {
         case $osfamily {
                'Debian' : {
@@ -26,7 +26,7 @@ class salt::repo (
                        repos    =>  'main',
                        key      => {
                            'id' =>  '754A1A7AE731F165D5E6D4BD0E08A149DE57BFBE',
-                           'source' => 'https://repo.saltstack.com/apt/ubuntu/#{operatingsystemrelease}/amd64/latest/SALTSTACK-GPG-KEY.pub',
+                           'source' => "https://repo.saltstack.com/apt/ubuntu/#{operatingsystemrelease}/amd64/latest/SALTSTACK-GPG-KEY.pub",
                        },
                        include => {
                            'src' => false,

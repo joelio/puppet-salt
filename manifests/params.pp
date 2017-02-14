@@ -22,6 +22,7 @@ class salt::params {
       $master_service_manage = true
       $master_service_enable = true
 
+      $manage_repo = false 
     }
     'archlinux' : {
       $minion_config_manage = true
@@ -64,6 +65,8 @@ class salt::params {
       $master_service_ensure = 'running'
       $master_service_manage = true
       $master_service_enable = true
+
+      $manage_repo = false 
     }
     'debian'    : {
       $minion_config_manage = true
@@ -85,6 +88,8 @@ class salt::params {
       $master_service_ensure = 'running'
       $master_service_manage = true
       $master_service_enable = true
+
+      $manage_repo = false 
     }
     default     : {
       case $::operatingsystem {
