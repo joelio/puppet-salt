@@ -22,11 +22,11 @@ class salt::repo (
                'Debian' : {
                    include ::apt
                    apt::source { 'saltstack':
-                       location =>  "http://repo.saltstack.com/apt/ubuntu/#{operatingsystemrelease}/amd64/latest",
+                       location =>  "http://repo.saltstack.com/apt/ubuntu/$operatingsystemrelease/amd64/latest",
                        repos    =>  'main',
                        key      => {
                            'id' =>  '754A1A7AE731F165D5E6D4BD0E08A149DE57BFBE',
-                           'source' => "https://repo.saltstack.com/apt/ubuntu/#{operatingsystemrelease}/amd64/latest/SALTSTACK-GPG-KEY.pub",
+                           'source' => "https://repo.saltstack.com/apt/ubuntu/$operatingsystemrelease/amd64/latest/SALTSTACK-GPG-KEY.pub",
                        },
                        include => {
                            'src' => false,
